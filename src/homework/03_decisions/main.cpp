@@ -9,9 +9,9 @@ int main()
 {
 	string letter_grade;
 	
-	int credit_hours, 
-		credit_hours_sum, 
-		credit_points_sum;
+	int credit_hours;
+	int credit_hours_sum;
+	int credit_points_sum;
 
 	char continue_input = 'n';
 
@@ -21,9 +21,9 @@ int main()
 		cout << "Enter credit hours: ";
 		cin >> credit_hours;
 
-		credit_hours_sum = credit_hours;
+		credit_hours_sum = credit_hours_sum + credit_hours;
 		cout << "Credit hours sum" << credit_hours_sum;
-		credit_points_sum = credit_hours * get_grade_points(letter_grade);
+		credit_points_sum = credit_points_sum + credit_hours * get_grade_points(letter_grade);
 		cout << "Credit points sum" << credit_points_sum;
 
 		cout << "Continue input? <y/n> ";
