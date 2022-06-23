@@ -1,5 +1,6 @@
 //write include statements
 #include<iostream>
+#include "dna.h"
 //write using statements
 using std::string;
 using std::cout;
@@ -16,28 +17,34 @@ user enters a y or Y.
 int main(){
 
 	int option = 0;
-	string dna = "y";
+	string dna = "";
 	string result = "";
 	
-	while (option != "y" && option != "Y"){
+	while (dna != "y" && dna != "Y"){
 	
-		cout<<"\nPlease enter 1 for GC Content or 2 for DNA Complement (y or Y to quit): ";
-		cin>>option;
+		cout<<"\nPlease enter DNA sequence (y or Y to quit): ";
+		cin>>dna;
 		
-		if (option == 1 || option == 2){
-			cout<<"\nPlease enter DNA sequence: ";
-			cin>>dna;
+		if (dna != "y" && dna != "Y"){
+			while(option != 1 && option != 2){
+				cout<<"\nPlease enter 1 for GC Content or 2 for DNA Complement: ";
+				cin>>option;
+				if (option != 1 && option != 2){
+					cout<<"\nInvalid option. Please enter either 1 for GC Content or 2 for DNA Complement.";
+				}
+			}
 			
 			if (option == 1){
 				result = get_gc_content(dna);
 			} else if (option == 2){
 				result = get_dna_complement(dna);
-			}
+			} 
 			
-			cout<<"\nResult: "<<result;
+			cout<<"\nResult: "<<result<<"\n";
+			option = 0;
 		}
 		
 	}
-	
+
 	return 0;
 }

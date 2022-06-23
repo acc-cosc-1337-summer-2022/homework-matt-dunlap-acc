@@ -24,12 +24,12 @@ string get_dna_complement(string dna){
 	
 	dna = reverse_string(dna);
 	
-	string complement = ""
-	string symbol = ""
+	string complement = "";
+	string symbol = "";
 	
 	for (int i = 0; i < dna.size() ; i++){
 		
-		symbol = dna[i]
+		symbol = dna[i];
 		
 		if (symbol == "A"){
 			complement += "T";
@@ -53,7 +53,7 @@ string reverse_string(string dna){
 	
 	for (int i = dna.size() - 1 ; i >= 0  ; i--){
 		
-		reverse += dna[i]
+		reverse += dna[i];
 		
 	}
 	
