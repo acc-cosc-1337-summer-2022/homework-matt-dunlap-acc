@@ -18,7 +18,6 @@ int main(){
 
 	int option = 0;
 	string dna = "";
-	string result = "";
 	
 	while (dna != "y" && dna != "Y"){
 	
@@ -35,12 +34,11 @@ int main(){
 			}
 			
 			if (option == 1){
-				result = get_gc_content(dna);
+				cout<<"\nGC Content: "<<get_gc_content(dna)<<"\n";
 			} else if (option == 2){
-				result = get_dna_complement(dna);
+				cout<<"\nDNA Complement: "<<get_dna_complement(dna)<<"\n";
 			} 
 			
-			cout<<"\nResult: "<<result<<"\n";
 			option = 0;
 		}
 		
